@@ -61,3 +61,31 @@ def remove_dir(dir_path):
         return None, True
     except:
         return "Unable to remove the directory.", False
+
+def rename_file(file_path, new_name):
+    try:
+        os.rename(file_path, new_name)
+
+        return None, True
+    except:
+        return "Unable to rename the file.", False
+
+def copy_file(file_path, new_path):
+    try:
+        shutil.copy(file_path, new_path)
+
+        return None, True
+    except:
+        return "Unable to copy the file.", False
+
+def file_exists(file_path):
+    try:
+        return os.path.isfile(file_path), True
+    except:
+        return "File does not exist.", False
+
+def dir_exists(dir_path):
+    try:
+        return os.path.isdir(dir_path), True
+    except:
+        return "Directory does not exist.", False
